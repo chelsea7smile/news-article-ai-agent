@@ -1,0 +1,10 @@
+FROM postgres:15-alpine
+
+RUN apk update && \
+    apk add --no-cache postgresql-dev build-base git clang llvm19 && \
+    export CC=clang && export CXX=clang++ && \
+    git clone https://github.com/pgvector/pgvector.git && \
+    cd pgvector && \
+    make NO_LTO=1 && make install NO_LTO=1 && \
+    cd .. && rm -rf pgvector && \
+    apk del postgresql-dev build-base git clang llvm19
