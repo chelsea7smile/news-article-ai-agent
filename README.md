@@ -60,7 +60,7 @@ CSV_FILE_PATH=./articles_dataset.csv
 
 Server Port
 
-PORT=3001
+PORT=3000
 
 > **Note:** Do not expose sensitive keys publicly. Use appropriate mechanisms (like environment variables) to secure your credentials.
 
